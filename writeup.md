@@ -13,6 +13,7 @@ cloud also provides enough training data for distinguishing people and hero.
 
 ### Segmentation Network 
 ----------------
+![](https://i.imgur.com/Fi1xkSE.jpg)
 
 -   Encoder block: 
 
@@ -86,6 +87,9 @@ The training loss is higher than the val_loss, which indicates a bit of overfitt
 
 - Final grade score: **0.456**
 
+### Potential application of this model
+---
+Since there are no limitations of what target in images should be, this network can be applied any objects(dog, cat, car, etc) as long as the labels in training data are marked correctly.
 ### Further improvement
 --------
 In order to improve the classification accuracy, several work worth a shot in the future:
