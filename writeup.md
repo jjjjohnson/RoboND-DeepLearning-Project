@@ -31,7 +31,7 @@ Endoder layer extract features from the image by shrinking the image wdith and h
 
 -   1x1 Convolution:
 
-1x1 convolution is used to preserve spacial information ant it often(not in this project) leads to dimension reductionality. In the project, I find the filters to be 264 yield the best performance.
+1x1 convolution is used to preserve spacial information ant it often(not in this project) leads to dimension reductionality. In the project, I find the filters to be 264 yield the best performance .A fully-connected layer of the same size would result in the same number of features. However, replacement of fully-connected layers with convolutional layers presents an added advantage that during inference, images of any size can be fed into the trained network.
 
 ```
  conv_1x1 = conv2d_batchnorm(encoder3, filters=264, kernel_size=1, strides=1)
@@ -52,7 +52,7 @@ Decoder block helps in upsampling the previous layer to a higher resolution or d
 
 -   Hyper-parameters
 
-Hyper-parameters are determined by trial and error. The guide line to choose them is keep the batch_size as big as possible and stops training(set num_epoch) when the val_loss does not improve.
+Hyper-parameters are determined by trial and error. The guide line to choose them is keep the batch_size as big as possible and stops training(set num_epoch) when the val_loss does not improve. If decrease the batch_size, the training process would be mush slower. The same effecets on learning rate, since each layer has normalization, the DNN can accept a higher learning rate. Number of epoches are determined by the validation loss stops decreasing
 
 ```
 	learning_rate = 0.05
